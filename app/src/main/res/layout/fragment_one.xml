@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.leeduo.forjob.MenuActivity">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorBlack"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <LinearLayout
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+                <View
+                    android:background="#404a59"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+                <WebView
+                    android:background="#404a59"
+                    android:id="@+id/web_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+            </LinearLayout>
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.13">
+                        <TextView
+                            android:id="@+id/search_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/search_text_shape"
+                            android:gravity="center"
+                            android:text="    搜索公司/职位"
+                            android:textColor="@color/grayWhite"
+                            android:textSize="13dp" />
+                        <ImageView
+                            android:layout_marginLeft="130dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/icon_search_nor"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp" />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:src="@drawable/icon_scan_code_white"
+                            android:layout_gravity="center"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/menu_pic"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="热门职位"
+            android:textSize="20dp"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <View
+            android:background="@color/colorGray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:overScrollMode="never"
+            android:id="@+id/hot_position_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

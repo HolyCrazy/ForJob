@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:background="@color/pureWhite"
+        android:textSize="18dp"
+        android:textColor="@color/textColor"
+        android:gravity="center"
+        android:text="公司"
+        android:layout_width="match_parent"
+        android:layout_height="43dp" />
+    <android.support.design.widget.CoordinatorLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:elevation="0dp"
+            android:translationZ="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar
+                android:background="@color/pureWhite"
+                app:contentInsetStart="0dp"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:id="@+id/city_parent_view"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:gravity="center"
+                                android:id="@+id/city_text"
+                                android:textSize="14dp"
+                                android:textColor="@color/textColor"
+                                android:text="城市"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/city_image"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/icon_arrow_down"
+                                android:layout_toRightOf="@+id/city_text"
+                                android:layout_width="8dp"
+                                android:layout_height="8dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:id="@+id/select_parent_view"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:gravity="center"
+                                android:id="@+id/select_text"
+                                android:textSize="14dp"
+                                android:textColor="@color/textColor"
+                                android:text="筛选"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/select_image"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/icon_arrow_down"
+                                android:layout_toRightOf="@+id/select_text"
+                                android:layout_width="8dp"
+                                android:layout_height="8dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:id="@+id/sort_parent_view"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:gravity="center"
+                                android:id="@+id/sort_text"
+                                android:textSize="14dp"
+                                android:textColor="@color/textColor"
+                                android:text="排序"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+                            <ImageView
+                                android:id="@+id/sort_image"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/icon_arrow_down"
+                                android:layout_toRightOf="@+id/order_text"
+                                android:layout_width="8dp"
+                                android:layout_height="8dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+            <android.support.v7.widget.RecyclerView
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:id="@+id/company_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondWhite">
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/city_select"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/city_select_text"
+                android:textSize="15dp"
+                android:textColor="@color/textColor"
+                android:text="北京"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/city_select_image"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/icon_pull"
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/search_edit_shape"
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_search_nor"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/search_edit"
+                    android:textSize="13dp"
+                    android:textColor="@color/grayWhite"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:layout_marginLeft="5dp"
+                    android:textCursorDrawable="@drawable/cursor_drawable"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/edit_clear"
+                    android:visibility="gone"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/icon_search_clear"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+            </FrameLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/cancel_back"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="@color/textColor"
+                android:gravity="center"
+                android:text="取消"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="0.07"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:background="@color/colorGray"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+        <LinearLayout
+            android:id="@+id/company_parent"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="11dp">
+
+                        <ImageView
+                            android:id="@+id/company_logo"
+                            android:layout_width="58dp"
+                            android:layout_height="58dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/default_user" />
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/company_image_shape2" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="0.3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/company_short_name"
+                            android:textStyle="bold"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="16dp"
+                            android:textColor="@color/textColor"
+                            android:textSize="18dp"
+                            android:text="爱奇艺"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp" />
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp"
+                            android:background="@drawable/text_background_shape"
+                            android:textColor="@color/colorGreen"
+                            android:gravity="center"
+                            android:text = "资质认证"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/company_full_name"
+                            android:textSize="12dp"
+                            android:gravity="center_vertical"
+                            android:text="北京奇艺世纪科技有限公司"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="12dp"
+                            android:id="@+id/company_city"
+                            android:gravity="center_vertical"
+                            android:text="南京"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <View
+                                android:layout_width="4dp"
+                                android:layout_height="match_parent"/>
+                            <View
+                                android:layout_gravity="center"
+                                android:background="@color/thirdWhite"
+                                android:layout_width="1.2dp"
+                                android:layout_height="12dp"/>
+                            <View
+                                android:layout_width="4dp"
+                                android:layout_height="match_parent"/>
+                        </LinearLayout>
+                        <TextView
+                            android:textSize="12dp"
+                            android:id="@+id/company_position_number"
+                            android:gravity="center_vertical"
+                            android:text="564个在招职位"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <View
+                                android:layout_width="4dp"
+                                android:layout_height="match_parent"/>
+                            <View
+                                android:layout_gravity="center"
+                                android:background="@color/thirdWhite"
+                                android:layout_width="1.2dp"
+                                android:layout_height="12dp"/>
+                            <View
+                                android:layout_width="4dp"
+                                android:layout_height="match_parent"/>
+                        </LinearLayout>
+                        <TextView
+                            android:textSize="12dp"
+                            android:id="@+id/company_interview"
+                            android:gravity="center_vertical"
+                            android:text="133个面试评价"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp" />
+
+                    </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            <View
+                android:background="@color/colorGray"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_list"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+</LinearLayout>

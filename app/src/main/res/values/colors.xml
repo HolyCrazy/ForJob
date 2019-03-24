@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#333333</color>
+    <color name="colorAccent">#25BF7C</color>
+
+    <color name="colorGreen">#0CC388</color>
+    <color name="alphaColorGreen">#110CC388</color>
+    <color name="alpha">#00ffffff</color>
+    <color name="pureWhite">#ffffff</color>
+    <color name="closePureWhite">#fafafa</color>
+    <color name="secondWhite">#f6f6f6</color>
+    <color name="thirdWhite">#e0e0e0</color>
+    <color name="fourthWhite">#f0f0f0</color>
+    <color name="fifthWhite">#f8f8f8</color>
+    <color name="colorGray">#ececec</color>
+    <color name="secondGray">#e8e8e8</color>
+    <color name="darkGray">#cccccc</color>
+    <color name="textColor">#333333</color>
+    <color name="darkTextColor">#111111</color>
+    <color name="alphaTextColor">#666666</color>
+    <color name="grayWhite">#999999</color>
+    <color name="colorBlack">#000000</color>
+    <color name="pinkRed">#ff5858</color>
+</resources>

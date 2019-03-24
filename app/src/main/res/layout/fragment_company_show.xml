@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.example.leeduo.forjob.HeadZoomScrollView
+        android:background="@color/secondWhite"
+        android:id="@+id/head_zoom_scroll"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/company_show_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/test_pic"
+                android:layout_width="match_parent"
+                android:layout_height="140dp" />
+            <LinearLayout
+                android:layout_marginTop="-35dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/company_logo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_user" />
+               <LinearLayout
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="20dp"/>
+                   <LinearLayout
+                       android:layout_marginRight="20dp"
+                       android:layout_marginLeft="20dp"
+                       android:orientation="horizontal"
+                       android:layout_width="match_parent"
+                       android:layout_height="80dp">
+                       <LinearLayout
+                           android:orientation="vertical"
+                           android:layout_weight="0.25"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent">
+                           <LinearLayout
+                               android:orientation="horizontal"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content">
+                               <TextView
+                                   android:id="@+id/company_short_name"
+                                   android:textColor="@color/textColor"
+                                   android:textSize="20dp"
+                                   android:text="焦点科技"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content" />
+                               <View
+                                   android:layout_width="5dp"
+                                   android:layout_height="match_parent"/>
+                               <TextView
+                                   android:layout_gravity="center_vertical"
+                                   android:textSize="12dp"
+                                   android:background="@drawable/text_background_shape"
+                                   android:textColor="@color/colorGreen"
+                                   android:gravity="center"
+                                   android:text = "资质认证"
+                                   android:layout_width="60dp"
+                                   android:layout_height="20dp" />
+                           </LinearLayout>
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_marginTop="10dp"
+                               android:orientation="horizontal">
+
+                               <TextView
+                                   android:id="@+id/company_location"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="20dp"
+                                   android:gravity="center_vertical"
+                                   android:text="南京"
+                                   android:textSize="12dp" />
+
+                               <LinearLayout
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="20dp"
+                                   android:orientation="horizontal">
+
+                                   <View
+                                       android:layout_width="4dp"
+                                       android:layout_height="match_parent" />
+
+                                   <View
+                                       android:layout_width="1.2dp"
+                                       android:layout_height="12dp"
+                                       android:layout_gravity="center"
+                                       android:background="#e0e0e0"  />
+
+                                   <View
+                                       android:layout_width="4dp"
+                                       android:layout_height="match_parent" />
+                               </LinearLayout>
+
+                               <TextView
+                                   android:id="@+id/company_finance_stage"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="20dp"
+                                   android:gravity="center_vertical"
+                                   android:text="上市公司"
+                                   android:textSize="12dp" />
+
+                               <LinearLayout
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="20dp"
+                                   android:orientation="horizontal">
+
+                                   <View
+                                       android:layout_width="4dp"
+                                       android:layout_height="match_parent" />
+
+                                   <View
+                                       android:layout_width="1.2dp"
+                                       android:layout_height="12dp"
+                                       android:layout_gravity="center"
+                                       android:background="@color/thirdWhite"  />
+
+                                   <View
+                                       android:layout_width="4dp"
+                                       android:layout_height="match_parent" />
+                               </LinearLayout>
+
+                               <TextView
+                                   android:id="@+id/company_size"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="20dp"
+                                   android:gravity="center_vertical"
+                                   android:text="2000人以上"
+                                   android:textSize="12dp" />
+
+                               <LinearLayout
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="20dp"
+                                   android:orientation="horizontal">
+
+                                   <View
+                                       android:layout_width="4dp"
+                                       android:layout_height="match_parent" />
+
+                                   <View
+                                       android:layout_width="1.2dp"
+                                       android:layout_height="12dp"
+                                       android:layout_gravity="center"
+                                       android:background="@color/thirdWhite" />
+
+                                   <View
+                                       android:layout_width="4dp"
+                                       android:layout_height="match_parent" />
+                               </LinearLayout>
+
+                               <TextView
+                                   android:id="@+id/company_industry_field"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="20dp"
+                                   android:gravity="center_vertical"
+                                   android:text="移动互联网,数据服务"
+                                   android:textSize="12dp" />
+                           </LinearLayout>
+                       </LinearLayout>
+                       <LinearLayout
+                           android:layout_weight="1"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent">
+                           <FrameLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent">
+                               <Button
+                                   android:translationZ="0dp"
+                                   android:elevation="0dp"
+                                   android:layout_gravity="right"
+                                   android:background="@drawable/attention_button_shape"
+                                   android:textSize="13dp"
+                                   android:textColor="@color/colorGreen"
+                                   android:text="+ 关注"
+                                   android:layout_width="50dp"
+                                   android:layout_height="25dp" />
+                           </FrameLayout>
+                       </LinearLayout>
+                   </LinearLayout>
+               </LinearLayout>
+                <View
+                    android:background="@color/fourthWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/my_tab_layout"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/TabLayoutStyle"
+                    android:background="@color/secondWhite"
+                    app:tabMode="fixed"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+                </android.support.design.widget.TabLayout>
+                <View
+                    android:background="@color/fourthWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+               <android.support.v4.view.ViewPager
+                   android:overScrollMode="never"
+                   android:id="@+id/my_view_pager"
+                   android:layout_width="match_parent"
+                   android:layout_height="610dp">
+
+               </android.support.v4.view.ViewPager>
+            </LinearLayout>
+        </LinearLayout>
+    </com.example.leeduo.forjob.HeadZoomScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/frame_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/ic_back_white" />
+
+        <ImageView
+            android:id="@+id/share_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="13dp"
+            android:src="@drawable/ic_share_company_white" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="焦点科技"
+            android:textColor="@color/alpha"
+            android:textSize="18dp" />
+
+        <View
+            android:id="@+id/divider_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:background="@color/darkGray" />
+    </FrameLayout>
+</FrameLayout>

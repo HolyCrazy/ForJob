@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pureWhite">
+    <FrameLayout
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <ImageView
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/icon_close_edit"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/colorGreen"
+            android:text="保存"
+            android:layout_gravity="right|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+    </FrameLayout>
+    <View
+        android:background="@color/darkGray"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+    <TextView
+        android:layout_marginLeft="13dp"
+        android:textColor="@color/darkTextColor"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="你的邮箱"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="55dp"/>
+    <EditText
+        android:focusedByDefault="true"
+        android:textCursorDrawable="@drawable/text_cursor"
+        android:layout_marginLeft="13dp"
+        android:hint="shalala123@lagou.com"
+        android:textColorHint="@color/darkGray"
+        android:maxLength="10"
+        android:textSize="16dp"
+        android:textColor="@color/darkTextColor"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+    <View
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:background="@color/darkGray"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="18dp"/>
+    <TextView
+        android:textSize="12dp"
+        android:textColor="@color/darkGray"
+        android:layout_marginLeft="13dp"
+        android:text="0/30字符"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

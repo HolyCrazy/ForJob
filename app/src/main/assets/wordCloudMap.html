@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.js"></script>
+    <script src="echarts-wordcloud.min.js"></script>
+</head>
+<body
+     style="height:300px;width:100%;margin:0">
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 100%;height:100%;background-color:#f6f6f6;"></div>
+<script type="text/javascript">
+    function reset(data){
+      var myChart = echarts.init(document.getElementById('main'));
+      myChart.setOption(data);
+    }
+
+
+</script>
+</body>
+</html>

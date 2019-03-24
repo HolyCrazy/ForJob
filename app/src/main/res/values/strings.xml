@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">就业人才平台</string>
+    <integer name="frame_duration">50</integer>
+</resources>
