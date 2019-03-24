@@ -260,14 +260,14 @@ public class CompanyShowFragment extends Fragment implements View.OnClickListene
 
         companyInfoFragment = new CompanyInfoFragment();
         companyInfoFragment.setArguments(bundle);
-        companyInfoFragment.setHeadZoomScrollView(headZoomScrollView);
+        //companyInfoFragment.setHeadZoomScrollView(headZoomScrollView);
 
         companyPositionsFragment = new CompanyPositionsFragment();
-        companyPositionsFragment.setHeadZoomScrollView(headZoomScrollView);
+        //companyPositionsFragment.setHeadZoomScrollView(headZoomScrollView);
         companyPositionsFragment.setArguments(bundle);
 
         companySpaceFragment = new CompanySpaceFragment();
-        companySpaceFragment.setHeadZoomScrollView(headZoomScrollView);
+        //companySpaceFragment.setHeadZoomScrollView(headZoomScrollView);
         companySpaceFragment.setArguments(bundle);
 
         fragmentArrayList.add(companyInfoFragment);

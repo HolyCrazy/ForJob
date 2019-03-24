@@ -4,6 +4,7 @@
 	<dimen name="activity_vertical_margin">31.1436dp</dimen>
 	<dimen name="dp_m_60">-116.7883dp</dimen>
 	<dimen name="dp_m_30">-58.3942dp</dimen>
+	<dimen name="dp_m_35">-68.1265dp</dimen>
 	<dimen name="dp_m_20">-38.9294dp</dimen>
 	<dimen name="dp_m_12">-23.3577dp</dimen>
 	<dimen name="dp_m_10">-19.4647dp</dimen>
@@ -15,6 +16,7 @@
 	<dimen name="dp_0_1">0.1946dp</dimen>
 	<dimen name="dp_0_5">0.9732dp</dimen>
 	<dimen name="dp_1">1.9465dp</dimen>
+	<dimen name="dp_1_2">2.3358dp</dimen>
 	<dimen name="dp_1_5">2.9197dp</dimen>
 	<dimen name="dp_2">3.8929dp</dimen>
 	<dimen name="dp_2_5">4.8662dp</dimen>
@@ -385,7 +387,9 @@
 	<dimen name="dp_422">821.4112dp</dimen>
 	<dimen name="dp_472">918.7348dp</dimen>
 	<dimen name="dp_500">973.2360dp</dimen>
+	<dimen name="dp_570">1109.4891dp</dimen>
 	<dimen name="dp_600">1167.8832dp</dimen>
+	<dimen name="dp_610">1187.3479dp</dimen>
 	<dimen name="dp_640">1245.7421dp</dimen>
 	<dimen name="dp_720">1401.4599dp</dimen>
 	<dimen name="sp_6">11.6788sp</dimen>

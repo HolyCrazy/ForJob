@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.NestedScrollView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,7 @@ public class CompanyInfoFragment extends Fragment {
     private String locationString,companyShortNameString;
     private NestedScrollView nestedScrollView;
     private HeadZoomScrollView headZoomScrollView;
-    private double screenHeight;
+    //private double screenHeight;
 
     @Nullable
     @Override
@@ -58,8 +59,11 @@ public class CompanyInfoFragment extends Fragment {
 
         bundle = getArguments();
         companyId = bundle.getInt("company_id",62);
-        screenHeight = ScreenTools.getScreenHeight(getContext())*0.29;
-        Log.d(TAG, "onCreateView: "+screenHeight);
+        //screenHeight = ScreenTools.getScreenHeight(getContext())*0.29;
+//        screenHeight = getResources().getDimension(R.dimen.dp_570);
+//        DisplayMetrics dm = getResources().getDisplayMetrics();
+//        screenHeight = screenHeight / dm.density;
+//        Log.d(TAG, "onCreateView: "+screenHeight);
 
         companyInfo = mView.findViewById(R.id.company_info);
         companyCity = mView.findViewById(R.id.company_city);
@@ -131,43 +135,43 @@ public class CompanyInfoFragment extends Fragment {
             }
         });
 
-        headZoomScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                int y = headZoomScrollView.getScrollY();
-                if(y<screenHeight){
-                    synchronized (this){
-                        try{
-                            nestedScrollView.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    nestedScrollView.setNestedScrollingEnabled(false);
-                                    if(nestedScrollView.getParent() != null)
-                                    nestedScrollView.getParent().requestDisallowInterceptTouchEvent(false);
-                                }
-                            });
-                        }catch(Exception e){}
-
-                    }
-                }else {
-                    synchronized (this){
-                        try{
-                            nestedScrollView.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    nestedScrollView.setNestedScrollingEnabled(true);
-                                    if(nestedScrollView.getParent() != null)
-                                    nestedScrollView.getParent().requestDisallowInterceptTouchEvent(true);
-                                }
-                            });
-                        }catch(Exception e){}
-
-                    }
-                }
-
-            }
-
-        });
+//        headZoomScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+//            @Override
+//            public void onScrollChanged() {
+//                int y = headZoomScrollView.getScrollY();
+//                if(y<screenHeight){
+//                    synchronized (this){
+//                        try{
+//                            nestedScrollView.post(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    nestedScrollView.setNestedScrollingEnabled(false);
+//                                    if(nestedScrollView.getParent() != null)
+//                                    nestedScrollView.getParent().requestDisallowInterceptTouchEvent(false);
+//                                }
+//                            });
+//                        }catch(Exception e){}
+//
+//                    }
+//                }else {
+//                    synchronized (this){
+//                        try{
+//                            nestedScrollView.post(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    nestedScrollView.setNestedScrollingEnabled(true);
+//                                    if(nestedScrollView.getParent() != null)
+//                                    nestedScrollView.getParent().requestDisallowInterceptTouchEvent(true);
+//                                }
+//                            });
+//                        }catch(Exception e){}
+//
+//                    }
+//                }
+//
+//            }
+//
+//        });
 
         return mView;
     }

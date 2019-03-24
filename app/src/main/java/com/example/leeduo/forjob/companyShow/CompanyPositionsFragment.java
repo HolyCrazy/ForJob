@@ -12,6 +12,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,8 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.content.ContentValues.TAG;
+
 
 /**
  * Created by LeeDuo on 2019/2/9.
@@ -79,8 +83,8 @@ public class CompanyPositionsFragment extends Fragment implements View.OnClickLi
     private boolean citySelectFlag,experienceSelectFlag,salarySelectFlag;
     private String selectCity,selectExperience;
     private Integer selectMinSalary,selectMaxSalary;
-    private boolean canScroll = false;
-    private double screenHeight;
+    private boolean canScroll = true;
+//    private double screenHeight;
 
     @Nullable
     @Override
@@ -95,7 +99,10 @@ public class CompanyPositionsFragment extends Fragment implements View.OnClickLi
         companyId = bundle.getInt("company_id",62);
         page = 1;
         size = 10;
-        screenHeight = ScreenTools.getScreenHeight(getContext())*0.29;
+//        screenHeight = getResources().getDimension(R.dimen.dp_570);
+//        DisplayMetrics dm = getResources().getDisplayMetrics();
+//        screenHeight = screenHeight / dm.density;
+//        Log.d(TAG, "onCreateView:_________________ "+screenHeight);
 
         //筛选标签容器
         labelList = new ArrayList<>();
@@ -225,19 +232,26 @@ public class CompanyPositionsFragment extends Fragment implements View.OnClickLi
             }
         }).start();
 
-        headZoomScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                int y = headZoomScrollView.getScrollY();
-
-                if(y<screenHeight){//////////////////////////////////////////////////////////////////////////////////
-                    recyclerView.setNestedScrollingEnabled(false);
-                }else {
-                    recyclerView.setNestedScrollingEnabled(true);
-                }
-
-            }
-        });
+//        headZoomScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+//            @Override
+//            public void onScrollChanged() {
+//                int y = headZoomScrollView.getScrollY();
+//                Log.d(TAG, "onScrollChanged: _________________"+y);
+//                if(y<screenHeight){//////////////////////////////////////////////////////////////////////////////////
+//                    if(canScroll){
+//                        recyclerView.setNestedScrollingEnabled(false);
+//                        canScroll = !canScroll;
+//                    }
+//                }else {
+//                    if(!canScroll){
+//                        recyclerView.setNestedScrollingEnabled(true);
+//                        canScroll = !canScroll;
+//                    }
+//
+//                }
+//
+//            }
+//        });
 
 
 
@@ -299,7 +313,7 @@ public class CompanyPositionsFragment extends Fragment implements View.OnClickLi
 //                }
             }
         });
-        recyclerView.setNestedScrollingEnabled(false);
+        //recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setFocusable(false);//开始时，不会展示到recycler View的位置
 
         //异步处理网络请求

@@ -12,6 +12,8 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by LeeDuo on 2019/2/4.
  */
@@ -66,6 +68,9 @@ public class HeadZoomScrollView extends ScrollView {
         this.mReplyRatio = mReplyRatio;
     }
 
+    private int mLasrX =0;
+    private int mLastY =0;
+
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -92,6 +97,8 @@ public class HeadZoomScrollView extends ScrollView {
             return super.onTouchEvent(ev);
         }
         switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                return super.onTouchEvent(ev);
             case MotionEvent.ACTION_MOVE:
                 if (!mScaling) {
                     if (getScrollY() == 0) {
@@ -156,6 +163,39 @@ public class HeadZoomScrollView extends ScrollView {
     /**滑动监听*/
     public  interface OnScrollListener{
         void onScroll(int scrollX,int scrollY,int oldScrollX, int oldScrollY);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean intercept = false;
+        int x = (int) ev.getX();
+        int y = (int) ev.getY();
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                intercept = false;
+                break;
+            case MotionEvent.ACTION_MOVE:
+
+                int deltaX = x-mLasrX;
+                int deltaY = y-mLastY;
+                if(Math.abs(deltaX) > Math.abs(deltaY)){
+                    intercept = false;
+                }else{
+                    if(getChildAt(0).getMeasuredHeight() <= getHeight() +getScrollY()){
+                        intercept = false;
+                    }else{
+                        intercept = true;
+                    }
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                intercept = false;
+                break;
+        }
+        mLasrX = x;
+        mLastY = y;
+
+        return intercept;
     }
 
 }
