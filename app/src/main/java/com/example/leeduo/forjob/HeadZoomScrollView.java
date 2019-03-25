@@ -165,37 +165,42 @@ public class HeadZoomScrollView extends ScrollView {
         void onScroll(int scrollX,int scrollY,int oldScrollX, int oldScrollY);
     }
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        boolean intercept = false;
-        int x = (int) ev.getX();
-        int y = (int) ev.getY();
-        switch (ev.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                intercept = false;
-                break;
-            case MotionEvent.ACTION_MOVE:
-
-                int deltaX = x-mLasrX;
-                int deltaY = y-mLastY;
-                if(Math.abs(deltaX) > Math.abs(deltaY)){
-                    intercept = false;
-                }else{
-                    if(getChildAt(0).getMeasuredHeight() <= getHeight() +getScrollY()){
-                        intercept = false;
-                    }else{
-                        intercept = true;
-                    }
-                }
-                break;
-            case MotionEvent.ACTION_UP:
-                intercept = false;
-                break;
-        }
-        mLasrX = x;
-        mLastY = y;
-
-        return intercept;
-    }
-
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        boolean intercept = false;
+//        int x = (int) ev.getX();
+//        int y = (int) ev.getY();
+//        switch (ev.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                intercept = false;
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//
+//                int deltaX = x-mLasrX;
+//                int deltaY = y-mLastY;
+//                if(Math.abs(deltaX) > Math.abs(deltaY)){
+//                    intercept = false;
+//                }else{
+//                    if(getChildAt(0).getMeasuredHeight() <= getHeight() +getScrollY()){
+//                        intercept = false;
+//                    }else{
+//                        intercept = true;
+//                    }
+//                }
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                intercept = false;
+//                break;
+//        }
+//        mLasrX = x;
+//        mLastY = y;
+//
+//        return intercept;
+//    }
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+//        if(onInterceptTouchEvent(ev))
+//            return onTouchEvent(ev);
+//        return super.dispatchTouchEvent(ev);
+//    }
 }

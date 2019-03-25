@@ -5,15 +5,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.leeduo.forjob.Adapters.ViewPagerFragmentAdapter;
@@ -22,6 +26,7 @@ import com.example.leeduo.forjob.HeadZoomScrollView;
 import com.example.leeduo.forjob.JsonBean.JsonSingleCompanyBean;
 import com.example.leeduo.forjob.R;
 import com.example.leeduo.forjob.RetrofitService;
+import com.example.leeduo.forjob.Tools.ScreenTools;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import io.reactivex.Observer;
@@ -33,6 +38,8 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by LeeDuo on 2019/2/7.
  */
@@ -40,6 +47,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CompanyShowFragment extends Fragment implements View.OnClickListener{
     private View mView,dividerLine,tabLine;
     private HeadZoomScrollView headZoomScrollView;
+    //private ScrollView headZoomScrollView;
     private FrameLayout toolBarFrame;
     private ImageView backImage,shareImage;
     private TextView titleText,tabText;
@@ -67,6 +75,7 @@ public class CompanyShowFragment extends Fragment implements View.OnClickListene
         findView();
         //View Pager设置
         viewPagerSet();
+
 
         tabSet();
 //        new Thread(new Runnable() {
@@ -260,14 +269,14 @@ public class CompanyShowFragment extends Fragment implements View.OnClickListene
 
         companyInfoFragment = new CompanyInfoFragment();
         companyInfoFragment.setArguments(bundle);
-        //companyInfoFragment.setHeadZoomScrollView(headZoomScrollView);
+        companyInfoFragment.setHeadZoomScrollView(headZoomScrollView);
 
         companyPositionsFragment = new CompanyPositionsFragment();
-        //companyPositionsFragment.setHeadZoomScrollView(headZoomScrollView);
+        companyPositionsFragment.setHeadZoomScrollView(headZoomScrollView);
         companyPositionsFragment.setArguments(bundle);
 
         companySpaceFragment = new CompanySpaceFragment();
-        //companySpaceFragment.setHeadZoomScrollView(headZoomScrollView);
+        companySpaceFragment.setHeadZoomScrollView(headZoomScrollView);
         companySpaceFragment.setArguments(bundle);
 
         fragmentArrayList.add(companyInfoFragment);
@@ -278,6 +287,11 @@ public class CompanyShowFragment extends Fragment implements View.OnClickListene
         mTabLayout.setupWithViewPager(mViewPager);
 
         mViewPager.setCurrentItem(1);
+        //////////////////////////////////////////////////////////////////////////////
+        float screenHeight = getResources().getDimension(R.dimen.dp_120);
+        ViewGroup.LayoutParams l = mViewPager.getLayoutParams();
+        l.height = (int) (ScreenTools.getScreenHeight(getActivity()) -screenHeight);
+        mViewPager.setLayoutParams(l);
     }
 
     @Override

@@ -290,27 +290,27 @@ public class CompanyPositionsFragment extends Fragment implements View.OnClickLi
                 super.onScrolled(recyclerView, dx, dy);
                 lastPosition = linearLayoutManager.findLastVisibleItemPosition();
                 //上划
-//                if(dy>0){
-//                    //没到底
-//                    if (headZoomScrollView.getChildAt(0)  != null && headZoomScrollView.getChildAt(0) .getMeasuredHeight() > headZoomScrollView.getScrollY() + headZoomScrollView.getHeight()) {
-//                        delY += dy;
-//                      //上弹
-//                        synchronized (Object.class){
-//                            headZoomScrollView.post(new Runnable() {
-//                                @Override
-//                                public void run() {//将滚动量，传递给外部ScrollView
-//                                    recyclerView.setNestedScrollingEnabled(false);//禁止recyclerView滚动
-//                                    headZoomScrollView.scrollBy(0,delY);//scroll View滚动
-//                                    recyclerView.setNestedScrollingEnabled(true);//recycler View恢复滚动
-//                                }
-//
-//                            });
-//                        }
-//                    }else {//其他情况
-//                        delY = 0;
-//                        recyclerView.setNestedScrollingEnabled(true);
-//                    }
-//                }
+                if(dy>0){
+                    //没到底
+                    if (headZoomScrollView.getChildAt(0)  != null && headZoomScrollView.getChildAt(0) .getMeasuredHeight() > headZoomScrollView.getScrollY() + headZoomScrollView.getHeight()) {
+                        delY += dy;
+                      //上弹
+                        synchronized (Object.class){
+                            headZoomScrollView.post(new Runnable() {
+                                @Override
+                                public void run() {//将滚动量，传递给外部ScrollView
+                                    recyclerView.setNestedScrollingEnabled(false);//禁止recyclerView滚动
+                                    headZoomScrollView.scrollBy(0,delY);//scroll View滚动
+                                    recyclerView.setNestedScrollingEnabled(true);//recycler View恢复滚动
+                                }
+
+                            });
+                        }
+                    }else {//其他情况
+                        delY = 0;
+                        recyclerView.setNestedScrollingEnabled(true);
+                    }
+                }
             }
         });
         //recyclerView.setNestedScrollingEnabled(false);

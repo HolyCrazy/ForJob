@@ -25,6 +25,7 @@ import com.example.leeduo.forjob.RetrofitService;
 import com.example.leeduo.forjob.Tools.JavaScripter;
 import com.example.leeduo.forjob.Tools.ScreenTools;
 
+import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 
 import io.reactivex.Observer;
@@ -51,6 +52,7 @@ public class CompanySpaceFragment extends Fragment {
     private RetrofitService retrofitService;
     private NestedScrollView nestedScrollView;
     private HeadZoomScrollView headZoomScrollView;
+    private int delY;
 //    private double screenHeight;
 
     @Nullable
@@ -227,6 +229,35 @@ public class CompanySpaceFragment extends Fragment {
 //
 //            }
 //        });
+
+        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(final NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                int dy = scrollY;
+                //上划
+                if(dy>0){
+                    //没到底
+                    if (headZoomScrollView.getChildAt(0)  != null && headZoomScrollView.getChildAt(0) .getMeasuredHeight() > headZoomScrollView.getScrollY() + headZoomScrollView.getHeight()) {
+                        delY += dy;
+                        //上弹
+                        synchronized (Object.class){
+                            headZoomScrollView.post(new Runnable() {
+                                @Override
+                                public void run() {//将滚动量，传递给外部ScrollView
+                                    v.setNestedScrollingEnabled(false);//禁止recyclerView滚动
+                                    headZoomScrollView.scrollBy(0,delY);//scroll View滚动
+                                    v.setNestedScrollingEnabled(true);//recycler View恢复滚动
+                                }
+
+                            });
+                        }
+                    }else {//其他情况
+                        delY = 0;
+                        v.setNestedScrollingEnabled(true);
+                    }
+                }
+            }
+        });
 
 
         return mView;

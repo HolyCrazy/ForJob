@@ -14,7 +14,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/company_show_image"
                 android:scaleType="centerCrop"
@@ -25,7 +25,7 @@
                 android:layout_marginTop="@dimen/dp_m_35"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/company_logo"
                     android:layout_width="@dimen/dp_55"
@@ -67,7 +67,7 @@
                                    android:layout_height="match_parent"/>
                                <TextView
                                    android:layout_gravity="center_vertical"
-                                   android:textSize="12dp"
+                                   android:textSize="@dimen/dp_12"
                                    android:background="@drawable/text_background_shape"
                                    android:textColor="@color/colorGreen"
                                    android:gravity="center"
@@ -88,7 +88,7 @@
                                    android:layout_height="@dimen/dp_20"
                                    android:gravity="center_vertical"
                                    android:text="南京"
-                                   android:textSize="12dp" />
+                                   android:textSize="@dimen/dp_12" />
 
                                <LinearLayout
                                    android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
                                        android:layout_width="@dimen/dp_1_2"
                                        android:layout_height="@dimen/dp_12"
                                        android:layout_gravity="center"
-                                       android:background="#e0e0e0"  />
+                                       android:background="#e0e0e0" />
 
                                    <View
                                        android:layout_width="@dimen/dp_4"
@@ -131,7 +131,7 @@
                                        android:layout_width="@dimen/dp_1_2"
                                        android:layout_height="@dimen/dp_12"
                                        android:layout_gravity="center"
-                                       android:background="@color/thirdWhite"  />
+                                       android:background="@color/thirdWhite" />
 
                                    <View
                                        android:layout_width="@dimen/dp_4"

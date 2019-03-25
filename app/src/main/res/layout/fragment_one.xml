@@ -84,23 +84,33 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ImageView
-            android:src="@drawable/menu_pic"
+
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="80dp" />
-        <TextView
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:text="热门职位"
-            android:textSize="20dp"
-            android:textColor="@color/textColor"
-            android:layout_width="match_parent"
-            android:layout_height="50dp" />
-        <View
-            android:background="@color/colorGray"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                android:src="@drawable/menu_pic"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="热门职位"
+                    android:textSize="20dp"
+                    android:textColor="@color/textColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+                <View
+                    android:background="@color/colorGray"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
         <android.support.v7.widget.RecyclerView
             android:overScrollMode="never"
             android:id="@+id/hot_position_list"
