@@ -3,6 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="dp_m_64">-64dp</dimen>
     <dimen name="dp_m_60">-60dp</dimen>
     <dimen name="dp_m_30">-30dp</dimen>
     <dimen name="dp_m_35">-35dp</dimen>
@@ -385,6 +386,7 @@
     <dimen name="dp_370">370dp</dimen>
     <dimen name="dp_400">400dp</dimen>
     <dimen name="dp_410">410dp</dimen>
+    <dimen name="dp_420">420dp</dimen>
     <dimen name="dp_422">422dp</dimen>
     <dimen name="dp_472">472dp</dimen>
     <dimen name="dp_500">500dp</dimen>

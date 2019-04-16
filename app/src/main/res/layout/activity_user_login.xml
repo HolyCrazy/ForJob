@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ScrollView
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="@dimen/dp_64"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -15,34 +15,34 @@
             <FrameLayout
                 android:id="@+id/frame_tool_bar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="@dimen/dp_50">
                 <TextView
                     android:id="@+id/title_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:gravity="center"
                     android:text="用户登陆"
                     android:textColor="@color/textColor"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/dp_18" />
 
                 <View
                     android:id="@+id/divider_line"
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
+                    android:layout_height="@dimen/dp_0_5"
                     android:layout_gravity="bottom"
                     android:background="@color/darkGray" />
             </FrameLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="@dimen/dp_20"/>
             <android.support.v7.widget.CardView
                 android:translationZ="0dp"
                 app:cardElevation="2dp"
                 app:cardCornerRadius="2dp"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/dp_5"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="@dimen/dp_200">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -54,14 +54,14 @@
                         android:layout_height="match_parent">
                         <EditText
                             android:id="@+id/user_name"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:layout_marginLeft="@dimen/dp_20"
                             android:hint="手机号码"
-                            android:textSize="13dp"
+                            android:textSize="@dimen/dp_13"
                             android:textCursorDrawable="@drawable/cursor_drawable"
                             android:background="@null"
                             android:layout_width="match_parent"
-                            android:layout_height="30dp" />
+                            android:layout_height="@dimen/dp_30" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -77,14 +77,14 @@
                                 android:inputType="number"
                                 android:id="@+id/user_password"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginRight="20dp"
-                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="@dimen/dp_20"
+                                android:layout_marginLeft="@dimen/dp_20"
                                 android:hint="验证码"
-                                android:textSize="13dp"
+                                android:textSize="@dimen/dp_13"
                                 android:textCursorDrawable="@drawable/cursor_drawable"
                                 android:background="@null"
                                 android:layout_width="match_parent"
-                                android:layout_height="30dp" />
+                                android:layout_height="@dimen/dp_30" />
                         </FrameLayout>
                         <FrameLayout
                             android:layout_weight="1"
@@ -96,27 +96,27 @@
                                 android:translationZ="0dp"
                                 android:elevation="0dp"
                                 android:background="@drawable/attention_button_shape2"
-                                android:textSize="13dp"
+                                android:textSize="@dimen/dp_13"
                                 android:textColor="@color/colorGreen"
                                 android:text="获取验证码"
                                 android:layout_width="wrap_content"
-                                android:layout_height="25dp" />
+                                android:layout_height="@dimen/dp_25" />
                         </FrameLayout>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="@dimen/dp_20"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
         android:orientation="horizontal"
         android:background="@color/pureWhite"
-        android:layout_marginTop="-64dp"
+        android:layout_marginTop="@dimen/dp_m_64"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -125,10 +125,10 @@
             android:layout_height="match_parent">
             <TextView
                 android:id="@+id/user_login"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_5"
                 android:background="@drawable/green_text_shape2"
-                android:textSize="16dp"
+                android:textSize="@dimen/dp_16"
                 android:textColor="@color/pureWhite"
                 android:gravity="center"
                 android:text="登 陆"

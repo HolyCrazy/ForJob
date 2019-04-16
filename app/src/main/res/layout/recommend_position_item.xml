@@ -25,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
+                    android:maxLength="18"
                     android:id="@+id/position_name"
                     android:textStyle="bold"
                     android:textSize="16dp"

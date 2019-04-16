@@ -339,7 +339,11 @@ public class PositionShowFragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.back_image:
-                getActivity().getSupportFragmentManager().popBackStack();
+                if(getActivity().getSupportFragmentManager().getBackStackEntryCount() == 0)
+                    getActivity().finish();
+                else
+                    getActivity().getSupportFragmentManager().popBackStack();
+
                 break;
         }
     }

@@ -4,22 +4,22 @@
     android:layout_height="match_parent"
     android:background="@color/pureWhite">
     <FrameLayout
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/dp_100"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
             android:src="@drawable/activity_skin"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_width="140dp"
+            android:layout_width="@dimen/dp_140"
             android:layout_height="match_parent" />
         <TextView
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="@dimen/dp_100"
             android:layout_gravity="bottom"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="基于数据分析与Web应用的就业人才平台"
+            android:text="@string/app_name"
             android:textColor="@color/textColor"
-            android:textSize="22dp"
+            android:textSize="@dimen/dp_22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </FrameLayout>

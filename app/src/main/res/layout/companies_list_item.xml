@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="@dimen/dp_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         android:orientation="horizontal"
@@ -22,19 +22,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:layout_marginTop="11dp">
+                android:layout_marginTop="@dimen/dp_11">
 
                 <ImageView
                     android:id="@+id/company_logo"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
+                    android:layout_width="@dimen/dp_58"
+                    android:layout_height="@dimen/dp_58"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
                     android:src="@drawable/default_company" />
 
                 <LinearLayout
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
                     android:background="@drawable/companies_image_shape" />
             </FrameLayout>
 
@@ -49,58 +49,58 @@
                 android:id="@+id/company_name"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/dp_16"
                 android:textColor="@color/textColor"
-                android:textSize="18dp"
+                android:textSize="@dimen/dp_18"
                 android:text="焦点科技"
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/dp_30" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:textSize="12dp"
+                    android:textSize="@dimen/dp_12"
                     android:gravity="center_vertical"
                     android:text="在招职位"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <View
-                    android:layout_width="5dp"
+                    android:layout_width="@dimen/dp_5"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:textSize="12dp"
+                    android:textSize="@dimen/dp_12"
                     android:id="@+id/company_position_number"
                     android:gravity="center_vertical"
                     android:text="14"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:textSize="12dp"
+                    android:textSize="@dimen/dp_12"
                     android:id="@+id/company_location"
                     android:gravity="center_vertical"
                     android:text="南京"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
                     <View
-                        android:layout_width="4dp"
+                        android:layout_width="@dimen/dp_4"
                         android:layout_height="match_parent"/>
                     <View
                         android:layout_gravity="center"
                         android:background="@color/thirdWhite"
-                        android:layout_width="1.2dp"
-                        android:layout_height="12dp"/>
+                        android:layout_width="@dimen/dp_1_2"
+                        android:layout_height="@dimen/dp_12"/>
                     <View
-                        android:layout_width="4dp"
+                        android:layout_width="@dimen/dp_4"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
                 <TextView
@@ -109,71 +109,71 @@
                     android:gravity="center_vertical"
                     android:text="上市公司"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
                     <View
-                        android:layout_width="4dp"
+                        android:layout_width="@dimen/dp_4"
                         android:layout_height="match_parent"/>
                     <View
                         android:layout_gravity="center"
                         android:background="@color/thirdWhite"
-                        android:layout_width="1.2dp"
-                        android:layout_height="12dp"/>
+                        android:layout_width="@dimen/dp_1_2"
+                        android:layout_height="@dimen/dp_12"/>
                     <View
-                        android:layout_width="4dp"
+                        android:layout_width="@dimen/dp_4"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
                 <TextView
-                    android:textSize="12dp"
+                    android:textSize="@dimen/dp_12"
                     android:id="@+id/company_size"
                     android:gravity="center_vertical"
                     android:text="2000人以上"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
                     <View
-                        android:layout_width="4dp"
+                        android:layout_width="@dimen/dp_4"
                         android:layout_height="match_parent"/>
                     <View
                         android:layout_gravity="center"
                         android:background="@color/thirdWhite"
-                        android:layout_width="1.2dp"
-                        android:layout_height="12dp"/>
+                        android:layout_width="@dimen/dp_1_2"
+                        android:layout_height="@dimen/dp_12"/>
                     <View
-                        android:layout_width="4dp"
+                        android:layout_width="@dimen/dp_4"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
                 <TextView
-                    android:textSize="12dp"
+                    android:textSize="@dimen/dp_12"
                     android:id="@+id/company_industry_field"
                     android:gravity="center_vertical"
                     android:text="电子商务"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="@dimen/dp_5"/>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:textSize="11dp"
+                    android:textSize="@dimen/dp_11"
                     android:id="@+id/company_label_1"
                     android:background ="@color/secondWhite"
                     android:gravity="center_vertical"
                     android:text="股票期权"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <View
-                    android:layout_width="5dp"
+                    android:layout_width="@dimen/dp_5"
                     android:layout_height="match_parent"/>
                 <TextView
                     android:textSize="11dp"
@@ -182,36 +182,36 @@
                     android:gravity="center_vertical"
                     android:text="项目奖金"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <View
-                    android:layout_width="5dp"
+                    android:layout_width="@dimen/dp_5"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:textSize="11dp"
+                    android:textSize="@dimen/dp_11"
                     android:id="@+id/company_label_3"
                     android:background ="@color/secondWhite"
                     android:gravity="center_vertical"
                     android:text="寒暑假儿童班"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <View
-                    android:layout_width="5dp"
+                    android:layout_width="@dimen/dp_5"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:textSize="11dp"
+                    android:textSize="@dimen/dp_11"
                     android:id="@+id/company_label_4"
                     android:background ="@color/secondWhite"
                     android:gravity="center_vertical"
                     android:text="创造者家园"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="@dimen/dp_20" />
                 <View
-                    android:layout_width="5dp"
+                    android:layout_width="@dimen/dp_5"
                     android:layout_height="match_parent"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="20dp"/>
+        android:layout_height="@dimen/dp_20"/>
 </LinearLayout>

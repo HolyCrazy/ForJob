@@ -1,10 +1,16 @@
 package com.example.leeduo.forjob;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -36,6 +42,11 @@ public class MenuActivity extends AppCompatActivity {
     private ThirdFragment thirdFragment;
     private FourthFragment fourthFragment;
     private FifthFragment fifthFragment;
+
+    private int locationPermission,phonePermission,storagePermission;
+    private static final int LOCATION_REQUEST = 100;
+    private static final int PHONE_REQUEST = 200;
+    private static final int STORAGE_REQUEST = 300;
 
 
     @Override
@@ -183,6 +194,44 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        locationPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        phonePermission = ContextCompat.checkSelfPermission(this,Manifest.permission.READ_PHONE_STATE);
+        storagePermission = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if(locationPermission != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},LOCATION_REQUEST);
+                }
+                if(phonePermission != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},PHONE_REQUEST);
+                }
+                if(storagePermission != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},STORAGE_REQUEST);
+                }
+            }
+        }).start();
+
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == LOCATION_REQUEST){
+            if(grantResults.length>0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+               MenuActivity.this.finish();
+            }
+        }
+        if(requestCode == PHONE_REQUEST){
+            if(grantResults.length>0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+                MenuActivity.this.finish();
+            }
+        }
+        if(requestCode == STORAGE_REQUEST){
+            if(grantResults.length>0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+                MenuActivity.this.finish();
+            }
+        }
     }
     //右上角图标初始化并设置
     private void textBadgeItemInitAndSet(){
