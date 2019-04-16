@@ -202,13 +202,19 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(locationPermission != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},LOCATION_REQUEST);
+                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE},LOCATION_REQUEST);
                 }
                 if(phonePermission != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},PHONE_REQUEST);
+                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE},LOCATION_REQUEST);
                 }
                 if(storagePermission != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},STORAGE_REQUEST);
+                    ActivityCompat.requestPermissions(MenuActivity.this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE},LOCATION_REQUEST);
                 }
             }
         }).start();
@@ -217,18 +223,19 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
         if(requestCode == LOCATION_REQUEST){
             if(grantResults.length>0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
                MenuActivity.this.finish();
             }
         }
-        if(requestCode == PHONE_REQUEST){
-            if(grantResults.length>0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+        if(requestCode == LOCATION_REQUEST){
+            if(grantResults.length>0 && grantResults[1] != PackageManager.PERMISSION_GRANTED){
                 MenuActivity.this.finish();
             }
         }
-        if(requestCode == STORAGE_REQUEST){
-            if(grantResults.length>0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+        if(requestCode == LOCATION_REQUEST){
+            if(grantResults.length>0 && grantResults[2] != PackageManager.PERMISSION_GRANTED){
                 MenuActivity.this.finish();
             }
         }
